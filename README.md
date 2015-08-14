@@ -25,6 +25,19 @@ $shorter->out('plain');
 ```
 
 
+### Short Version
+```php
+$shorter = new TobyMaxham\Shortener();
+$shorter->short('http://maxham.de');
+```
+
+You are using the Laravel Framework? Than try out [laravel-junkies/url-shortener](https://github.com/laravel-junkies/url-shortener).
+It's an Laravel Package where you simply can use this:
+```php
+Shortener:short('http://example.com');
+```
+
+
 ## Options
 ```php
 // default = JSON, alternativ plain
@@ -34,3 +47,5 @@ $shorter->out($format);
 // also
 $shorter = new TobyMaxham\Shortener($url, $format);
 ```
+
+

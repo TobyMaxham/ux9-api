@@ -16,6 +16,10 @@ class Shortener
 	private $format;
 	private $response;
 
+	/**
+	 * @param null|string $url
+	 * @param bool|string $format
+	 */
 	public function __construct($url = NULL, $format = FALSE)
 	{
 		$this->addUrl($url);
@@ -32,6 +36,9 @@ class Shortener
 		$this->format($format);
 	}
 
+	/**
+	 * @param string $url
+	 */
 	public function addUrl($url)
 	{
 		if (is_array($url))
@@ -40,11 +47,30 @@ class Shortener
 			$this->url[] = $url;
 	}
 
+	/**
+	 * @param string $format
+	 */
 	public function format($format)
 	{
 		$this->format = $format;
 	}
 
+	/**
+	 * @param string $url
+	 * @return mixed
+	 */
+	public function short($url)
+	{
+		unset($this->url);
+		$this->addUrl($url);
+		$req = $this->out('array');
+		return isset($req['link']) ? $req['link'] : NULL;
+	}
+
+	/**
+	 * @param null|string $format
+	 * @return mixed
+	 */
 	public function out($format = NULL)
 	{
 		if (!is_null($format)) $this->format($format);
@@ -52,6 +78,9 @@ class Shortener
 		return $this->parseResponse();
 	}
 
+	/**
+	 * @return $this
+	 */
 	public function call()
 	{
 		$ch = curl_init();
@@ -68,6 +97,9 @@ class Shortener
 		return $this;
 	}
 
+	/**
+	 * @return array $options
+	 */
 	private function getOptions()
 	{
 		return [
@@ -78,27 +110,42 @@ class Shortener
 		];
 	}
 
+	/**
+	 * @return string
+	 */
 	public function getToken()
 	{
 		return $this->token;
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getUrl()
 	{
 		return $this->url;
 	}
 
+	/**
+	 * @return bool|string
+	 */
 	public function getAlias()
 	{
 		return $this->alias;
 	}
 
+	/**
+	 * @return mixed
+	 */
 	private function parseResponse()
 	{
 		$res = new Responder($this->response);
 		return $res->get($this->getFormat());
 	}
 
+	/**
+	 * @return string
+	 */
 	public function getFormat()
 	{
 		return $this->format;
