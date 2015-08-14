@@ -1,0 +1,30 @@
+{
+
+    "name": "tobymaxham/url-shortener",
+    "description": "The offical UX9 URL Shortener API.",
+    "keywords": ["tobymaxham", "url", "shortener"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "TobyMaxham",
+            "email": "git2015@maxham.de"
+        }
+    ],
+    "homepage": "http://ux9.de",
+    "support": {
+        "issues": "https://github.com/TobyMaxham/ux9-api/issues",
+        "source": "https://github.com/TobyMaxham/ux9-api"
+    },
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "TobyMaxham\\Shortener\\": ""
+        }
+    },
+    "minimum-stability": "dev"
+}
