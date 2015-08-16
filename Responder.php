@@ -1,10 +1,10 @@
 <?php
 
-namespace TobyMaxham;
+namespace TobyMaxham\Shortener;
 
 /**
  * Class Responder
- * @package TobyMaxham
+ * @package TobyMaxham\Shortener
  * @author Tobias Maxham
  */
 class Responder
