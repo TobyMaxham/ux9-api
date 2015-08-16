@@ -15,37 +15,40 @@ composer require tobymaxham/url-shortener
 
 ## Usage
 
+There are different ways how to get your short URL. If you are using Laravel than try out [laravel-junkies/url-shortener](https://github.com/laravel-junkies/url-shortener).
+It's an Laravel Package where you simply can use this:
 ```php
+$url = Shortener:short('http://example.com');
+```
 
-$shorter = new TobyMaxham\Shortener('http://github.com');
-$shorter->call()->out();
+### Initialize
+```php
+$shortener = new TobyMaxham\Ux9\Shortener($url = NULL, $format = FALSE);
+```
+Where `$url` can be a valid URL or an array containing URL's. The `$format` is the output/return format you specified. If you don't enter a format it will take the specified format defined in the [config file](#configuration) or the 'json' format.
 
-// or
-$shorter->out('plain');
+
+### Get short URL
+```php
+$shortener->out($format = NULL);
 ```
 
 
 ### Short Version
 ```php
-$shorter = new TobyMaxham\Shortener();
-$shorter->short('http://maxham.de');
+$shortener->short('http://maxham.de');
+$shortener->short('http://github.com');
 ```
+Here you will always get the string of the short url.
 
-You are using the Laravel Framework? Than try out [laravel-junkies/url-shortener](https://github.com/laravel-junkies/url-shortener).
-It's an Laravel Package where you simply can use this:
+
+### Options and parameters
 ```php
-Shortener:short('http://example.com');
+// default = json, alternativ plain, array
+$shortener->format($format);
+$shortener->out($format);
+$shortener->add($url);
 ```
 
-
-## Options
-```php
-// default = JSON, alternativ plain
-$shorter->format($format);
-$shorter->out($format);
-
-// also
-$shorter = new TobyMaxham\Shortener($url, $format);
-```
-
+## Configuration
 
