@@ -1,10 +1,10 @@
 <?php
 
-namespace TobyMaxham\Ux9;
+namespace TobyMaxham;
 
 /**
  * Class Responder
- * @package TobyMaxham\Ux9
+ * @package TobyMaxham
  * @author Tobias Maxham
  */
 class Responder

@@ -1,10 +1,10 @@
 <?php
 
-namespace TobyMaxham\Ux9;
+namespace TobyMaxham;
 
 /**
  * Class Shortener
- * @package TobyMaxham\Ux9
+ * @package TobyMaxhamt
  * @author Tobias Maxham
  */
 class Shortener
@@ -64,7 +64,10 @@ class Shortener
 		unset($this->url);
 		$this->addUrl($url);
 		$req = $this->out('array');
-		return isset($req['link']) ? $req['link'] : NULL;
+		$return = isset($req['link']) ? $req['link'] : NULL;
+		$this->url = [];
+		$this->response = NULL;
+		return $return;
 	}
 
 	/**
