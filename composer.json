@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "TobyMaxham\\Shortener\\": ""
+            "TobyMaxham\\Ux9\\": ""
         }
     },
     "minimum-stability": "dev"
