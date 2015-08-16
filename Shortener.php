@@ -1,10 +1,10 @@
 <?php
 
-namespace TobyMaxham\Shortener;
+namespace TobyMaxham\Ux9;
 
 /**
  * Class Shortener
- * @package TobyMaxham\Shortener
+ * @package TobyMaxham\Ux9
  * @author Tobias Maxham
  */
 class Shortener
