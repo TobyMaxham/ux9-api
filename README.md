@@ -52,3 +52,4 @@ $shortener->add($url);
 
 ## Configuration
 
+We have actually a bug in version v1.0. See [here](https://github.com/TobyMaxham/ux9-api/issues/4).
