@@ -19,13 +19,14 @@ class Shortener
 	/**
 	 * @param null|string $url
 	 * @param bool|string $format
+	 * @param null|string $config
 	 */
-	public function __construct($url = NULL, $format = FALSE)
+	public function __construct($url = NULL, $format = FALSE, $config = NULL)
 	{
 		$this->addUrl($url);
-
-		if (file_exists(__DIR__ . '/config.php')) {
-			$cfg = include __DIR__ . '/config.php';
+		$configFile = is_null($config) ? __DIR__ . '/ux9-config.php' : $config;
+		if (file_exists($configFile)) {
+			$cfg = include $configFile;
 			if (isset($cfg['API_TOKEN']))
 				$this->token = $cfg['API_TOKEN'];
 
