@@ -8,7 +8,7 @@ Official UX9 URL Shortener API
 
 
 ## Installation 
-```
+```ssh
 composer require tobymaxham/url-shortener
 ```
 
