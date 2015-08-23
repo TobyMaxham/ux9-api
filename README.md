@@ -1,5 +1,5 @@
 # UX9 URL Shortener API
-Official UX9 URL Shortener API. Visit (ux9.de)[http://ux9.de] for more Details.
+Official UX9 URL Shortener API. Visit [ux9.de](http://ux9.de) for more Details.
 
 [![Total Downloads](https://poser.pugx.org/TobyMaxham/url-shortener/downloads.svg)](https://packagist.org/packages/TobyMaxham/url-shortener)
 [![Latest Stable Version](https://poser.pugx.org/TobyMaxham/url-shortener/v/stable.svg)](https://packagist.org/packages/TobyMaxham/url-shortener)
