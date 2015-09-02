@@ -7,7 +7,9 @@
     "authors": [
         {
             "name": "TobyMaxham",
-            "email": "git2015@maxham.de"
+            "email": "git2015@maxham.de",
+            "homepage": "http://maxham.de",
+            "role": "Development"
         }
     ],
     "homepage": "http://ux9.de",
