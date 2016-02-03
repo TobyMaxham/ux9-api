@@ -10,12 +10,19 @@ namespace TobyMaxham\Ux9;
 class Responder
 {
 
+    /**
+     * Responder constructor.
+     * @param $response
+     */
 	public function __construct($response)
 	{
 		$this->response = $response;
 		if ($e = $this->hasError()) throw new \Exception($e);
 	}
 
+	/**
+	 * @return bool
+	 */
 	private function hasError()
 	{
 		$data = json_decode($this->response, TRUE);
@@ -23,11 +30,18 @@ class Responder
 		return FALSE;
 	}
 
+    /**
+     * @return mixed
+     */
 	public function __toString()
 	{
 		return $this->response;
 	}
 
+    /**
+     * @param string $format
+     * @return mixed
+     */
 	public function get($format)
 	{
 		if ($format == 'plain') return $this->makePlain();
@@ -35,12 +49,18 @@ class Responder
 		return json_decode($this->response, TRUE);
 	}
 
+    /**
+     * @return string
+     */
 	private function makePlain()
 	{
 		$data = json_decode($this->response, TRUE);
 		return $data['link'];
 	}
 
+    /**
+     * @return mixed
+     */
 	private function makeJson()
 	{
 		return $this->response;

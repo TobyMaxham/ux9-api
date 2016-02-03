@@ -24,6 +24,9 @@ $url = Shortener:short('http://example.com');
 ### Initialize
 ```php
 $shortener = new TobyMaxham\Ux9\Shortener($url = NULL, $format = FALSE);
+
+// set the API Key
+$shortener->setKey('YOUR_API_KEY');
 ```
 Where `$url` can be a valid URL or an array containing URL's. The `$format` is the output/return format you specified. If you don't enter a format it will take the specified format defined in the [config file](#configuration) or the 'json' format.
 

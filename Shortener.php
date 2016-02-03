@@ -123,6 +123,14 @@ class Shortener
 	}
 
 	/**
+	 * @param string
+	 */
+	public function setToken($token)
+	{
+		return $this->token = $token;
+	}
+
+	/**
 	 * @return array
 	 */
 	public function getUrl()
