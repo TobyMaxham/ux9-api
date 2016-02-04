@@ -5,6 +5,7 @@ Official UX9 URL Shortener API. Visit [ux9.de](http://ux9.de) for more Details.
 [![Latest Stable Version](https://poser.pugx.org/TobyMaxham/url-shortener/v/stable.svg)](https://packagist.org/packages/TobyMaxham/url-shortener)
 [![Latest Unstable Version](https://poser.pugx.org/TobyMaxham/url-shortener/v/unstable.svg)](https://packagist.org/packages/TobyMaxham/url-shortener)
 [![License](https://poser.pugx.org/TobyMaxham/url-shortener/license.svg)](https://packagist.org/packages/TobyMaxham/url-shortener)
+[![Finished](https://img.shields.io/badge/finished-83%25-yellowgreen.svg)](http://ux9.de)
 
 
 ## Installation 
