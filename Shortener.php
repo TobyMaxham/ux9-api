@@ -24,17 +24,21 @@ class Shortener
 	public function __construct($url = NULL, $format = FALSE, $config = NULL)
 	{
 		$this->addUrl($url);
-		$configFile = is_null($config) ? __DIR__ . '/ux9-config.php' : $config;
-		if (file_exists($configFile)) {
-			$cfg = include $configFile;
-			if (isset($cfg['API_TOKEN']))
-				$this->token = $cfg['API_TOKEN'];
+		if(!empty($config))	extract($config);
 
-			if (!$format && isset($cfg['FORMAT']))
-				$format = $cfg['FORMAT'];
-			else $format = 'json';
-		}
-		$this->format($format);
+		if(isset($API_TOKEN)) $this->setToken($API_TOKEN);
+		elseif (isset($TOKEN)) $this->setToken($TOKEN);
+
+		if(isset($FORMAT)) $this->format($FORMAT);
+		elseif (isset($format)) $this->format($format);
+	}
+
+	/**
+	 * @param string $token
+	 */
+	public function setToken($token)
+	{
+		$this->token = $token;
 	}
 
 	/**
@@ -62,13 +66,17 @@ class Shortener
 	 */
 	public function short($url)
 	{
-		unset($this->url);
-		$this->addUrl($url);
-		$req = $this->out('array');
-		$return = isset($req['link']) ? $req['link'] : NULL;
-		$this->url = [];
-		$this->response = NULL;
-		return $return;
+        unset($this->url);
+        $this->addUrl($url);
+        $req = $this->out($this->getFormat());
+
+        if($this->getFormat() == 'json' || $this->getFormat() == 'array')
+            return $req;
+
+        $return = isset($req['link']) ? $req['link'] : NULL;
+        $this->url = [];
+        $this->response = NULL;
+        return $return;
 	}
 
 	/**
@@ -120,14 +128,6 @@ class Shortener
 	public function getToken()
 	{
 		return $this->token;
-	}
-
-	/**
-	 * @param string
-	 */
-	public function setToken($token)
-	{
-		return $this->token = $token;
 	}
 
 	/**

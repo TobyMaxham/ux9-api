@@ -24,12 +24,12 @@ $url = Shortener:short('http://example.com');
 
 ### Initialize
 ```php
-$shortener = new TobyMaxham\Ux9\Shortener($url = NULL, $format = FALSE);
+$shortener = new TobyMaxham\Ux9\Shortener($url = null, $format = false);
 
 // set the API Key
-$shortener->setKey('YOUR_API_KEY');
+$shortener->setKey('YOUR_API_TOKEN');
 ```
-Where `$url` can be a valid URL or an array containing URL's. The `$format` is the output/return format you specified. If you don't enter a format it will take the specified format defined in the [config file](#configuration) or the 'json' format.
+Where `$url` can be a valid URL or an array containing URL's. The `$format` is the output/return format you specified. If you don't enter a format it will take the specified format defined in the [configuration Array](#configuration) or the 'json' format.
 
 
 ### Get short URL
@@ -56,4 +56,11 @@ $shortener->add($url);
 
 ## Configuration
 
-We have actually a bug in version v1.0. See [here](https://github.com/TobyMaxham/ux9-api/issues/4).
+```php
+$config = [
+    'API_TOKEN' => 'YOUR_API_TOKEN',
+    'FORMAT' => 'string',
+];
+
+$shortener = new TobyMaxham\Ux9\Shortener($url = null, $format = false, $config);
+```
