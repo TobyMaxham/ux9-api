@@ -6,12 +6,12 @@
     "authors": [
         {
             "name": "TobyMaxham",
-            "email": "git2016@maxham.de",
-            "homepage": "http://maxham.de",
+            "email": "git2017@maxham.de",
+            "homepage": "https://maxham.de",
             "role": "Development"
         }
     ],
-    "homepage": "http://ux9.de",
+    "homepage": "https://ux9.de",
     "support": {
         "issues": "https://github.com/TobyMaxham/ux9-api/issues",
         "source": "https://github.com/TobyMaxham/ux9-api"
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "TobyMaxham\\Ux9\\": ""
+            "TobyMaxham\\Ux9\\": "src/"
         }
     }
 }
