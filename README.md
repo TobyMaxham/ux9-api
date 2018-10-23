@@ -20,7 +20,7 @@ composer require tobymaxham/url-shortener
 There are different ways how to get your short URL. If you are using Laravel than try out [laravel-junkies/url-shortener](https://github.com/laravel-junkies/url-shortener).
 It's an Laravel Package where you simply can use this:
 ```php
-$url = Shortener:short('https://example.com');
+$url = Shortener::short('https://example.com');
 ```
 
 ### Initialize
@@ -63,5 +63,5 @@ $config = [
     'FORMAT' => 'string',
 ];
 
-$shortener = new TobyMaxham\Ux9\Shortener($url = null, $format = false, $config);
+$shortener = new TobyMaxham\Ux9\Shortener($url = null, $config);
 ```
