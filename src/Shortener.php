@@ -122,7 +122,7 @@ class Shortener
             return $req;
         }
 
-        $return = isset($req['link']) ? $req['link'] : null;
+        $return = isset($req['url']) ? $req['url'] : null;
         $this->url = [];
         $this->response = null;
         return $return;
