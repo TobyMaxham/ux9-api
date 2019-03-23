@@ -3,16 +3,16 @@
 namespace TobyMaxham\Ux9;
 
 /**
- * Class Responder
- * @package TobyMaxham\Ux9
- * @author Tobias Maxham
+ * @author Tobias Maxham <git2019@maxham.de>
  */
 class Responder
 {
+    protected $response;
 
     /**
-     * Responder constructor.
      * @param $response
+     *
+     * @throws \Exception
      */
     public function __construct($response)
     {
@@ -31,6 +31,7 @@ class Responder
         if ($data['error'] > 0) {
             return $data['msg'];
         }
+
         return false;
     }
 
@@ -44,16 +45,18 @@ class Responder
 
     /**
      * @param string $format
+     *
      * @return mixed
      */
     public function get($format)
     {
-        if ($format == 'plain') {
+        if ('plain' == $format || 'string' == $format) {
             return $this->makePlain();
         }
-        if ($format == 'json') {
+        if ('json' == $format) {
             return $this->makeJson();
         }
+
         return json_decode($this->response, true);
     }
 
@@ -62,8 +65,7 @@ class Responder
      */
     private function makePlain()
     {
-        $data = json_decode($this->response, true);
-        return $data['link'];
+        return $this->response;
     }
 
     /**

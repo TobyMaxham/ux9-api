@@ -6,7 +6,7 @@
     "authors": [
         {
             "name": "TobyMaxham",
-            "email": "git2017@maxham.de",
+            "email": "git2019@maxham.de",
             "homepage": "https://maxham.de",
             "role": "Development"
         }
@@ -17,7 +17,9 @@
         "source": "https://github.com/TobyMaxham/ux9-api"
     },
     "require": {
-        "php": ">=5.5.9"
+        "php": ">=5.5.9",
+        "ext-json": "*",
+        "ext-curl": "*"
     },
     "autoload": {
         "psr-4": {
