@@ -5,10 +5,10 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "TobyMaxham",
-            "email": "git2019@maxham.de",
+            "name": ":TobyMaxham",
+            "email": "git@maxham.de",
             "homepage": "https://maxham.de",
-            "role": "Development"
+            "role": "Developer"
         }
     ],
     "homepage": "https://ux9.de",
@@ -17,13 +17,24 @@
         "source": "https://github.com/TobyMaxham/ux9-api"
     },
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=8.2",
         "ext-json": "*",
         "ext-curl": "*"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.21"
     },
     "autoload": {
         "psr-4": {
             "TobyMaxham\\Ux9\\": "src/"
         }
-    }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "cs-fix": "./vendor/bin/pint src/"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

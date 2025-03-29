@@ -3,15 +3,13 @@
 namespace TobyMaxham\Ux9;
 
 /**
- * @author Tobias Maxham <git2019@maxham.de>
+ * @author Tobias Maxham <git@maxham.de>
  */
 class Responder
 {
     protected $response;
 
     /**
-     * @param $response
-     *
      * @throws \Exception
      */
     public function __construct($response)
@@ -44,8 +42,7 @@ class Responder
     }
 
     /**
-     * @param string $format
-     *
+     * @param  string  $format
      * @return mixed
      */
     public function get($format)

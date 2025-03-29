@@ -3,31 +3,35 @@
 namespace TobyMaxham\Ux9;
 
 /**
- * @author Tobias Maxham <git2019@maxham.de>
+ * @author Tobias Maxham <git@maxham.de>
  */
 class Shortener
 {
     private $url = [];
+
     private $response;
 
     // API URL
     protected $endPoint = 'https://api.ux9.de/';
-    protected $version = 'v2';
+
+    protected $version = 'v3';
 
     // API Options
     private $token;
+
     private $format;
+
     private $alias;
+
     private $password;
+
     private $expire;
+
     private $limit;
 
     protected $timeout = 4;
 
-    /**
-     * @return string
-     */
-    protected function getApiUrl()
+    protected function getApiUrl(): string
     {
         $endpoint = $this->endPoint.$this->version;
 
@@ -35,9 +39,9 @@ class Shortener
     }
 
     /**
-     * @param null|string $url
-     * @param null|array  $config
-     * @param bool|string $format
+     * @param  null|string  $url
+     * @param  null|array  $config
+     * @param  bool|string  $format
      */
     public function __construct($url = null, $config = null, $format = 'json')
     {
@@ -58,7 +62,7 @@ class Shortener
     }
 
     /**
-     * @param string $token
+     * @param  string  $token
      */
     public function setToken($token)
     {
@@ -66,7 +70,7 @@ class Shortener
     }
 
     /**
-     * @param string $url
+     * @param  string  $url
      */
     public function addUrl($url)
     {
@@ -78,7 +82,7 @@ class Shortener
     }
 
     /**
-     * @param string $format
+     * @param  string  $format
      */
     public function format($format)
     {
@@ -110,8 +114,6 @@ class Shortener
     }
 
     /**
-     * @param $url
-     *
      * @throws Exception
      *
      * @return mixed
@@ -139,7 +141,7 @@ class Shortener
     }
 
     /**
-     * @param null $format
+     * @param  null  $format
      *
      * @throws Exception
      *
@@ -173,6 +175,10 @@ class Shortener
             CURLOPT_HEADER         => 0,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_TIMEOUT        => $this->timeout,
+            CURLOPT_HTTPHEADER     => [
+                'Authorization: Bearer '.$this->getToken(),
+                'Accept: application/json',
+            ],
         ]);
         $this->response = curl_exec($ch);
         curl_close($ch);
@@ -188,8 +194,7 @@ class Shortener
     private function getOptions()
     {
         $required = [
-            'token' => $this->getToken(),
-            'url'   => $this->getUrl()[0],
+            'url' => $this->getUrl()[0],
         ];
 
         $optional = [];

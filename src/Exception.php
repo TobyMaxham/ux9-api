@@ -3,8 +3,6 @@
 namespace TobyMaxham\Ux9;
 
 /**
- * @author Tobias Maxham <git2019@maxham.de>
+ * @author Tobias Maxham <git@maxham.de>
  */
-class Exception extends \Exception
-{
-}
+class Exception extends \Exception {}
