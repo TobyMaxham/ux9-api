@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `tobymaxham/url-shortener` will be documented in this file
+All notable changes to `tobymaxham/ux9-api` will be documented in this file
 
 ## 3.0.0 - 2025-03-29
 
